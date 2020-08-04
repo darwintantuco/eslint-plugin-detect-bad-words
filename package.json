@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-detect-unwanted-words",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Detect unwanted words in code and comments",
   "keywords": [
     "eslint",

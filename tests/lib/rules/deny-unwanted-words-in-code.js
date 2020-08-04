@@ -39,6 +39,14 @@ ruleTester.run('detect-unwanted-words-in-code', rule, {
       errors: defaultErrors('tite'),
     },
     {
+      code: "'subtite'",
+      errors: defaultErrors('subtite'),
+    },
+    {
+      code: "'me fck'",
+      errors: defaultErrors('me fck'),
+    },
+    {
       code: "'fck'",
       errors: defaultErrors('fck'),
     },
