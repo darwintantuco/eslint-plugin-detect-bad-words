@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-deny-unwanted-words",
-  "version": "0.0.1",
-  "description": "Deny unwanted words in code",
+  "name": "eslint-plugin-detect-unwanted-words",
+  "version": "1.0.0",
+  "description": "Detect unwanted words in code and comments",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -35,9 +35,9 @@
     "node": ">=0.10.0"
   },
   "license": "MIT",
-  "homepage": "https://github.com/darwintantuco/eslint-plugin-deny-unwanted-words",
+  "homepage": "https://github.com/darwintantuco/eslint-plugin-detect-unwanted-words",
   "bugs": {
-    "url": "https://github.com/darwintantuco/eslint-plugin-deny-unwanted-words"
+    "url": "https://github.com/darwintantuco/eslint-plugin-detect-unwanted-words"
   },
-  "repository": "git@github.com:darwintantuco/eslint-plugin-deny-unwanted-words.git"
+  "repository": "git@github.com:darwintantuco/eslint-plugin-detect-unwanted-words.git"
 }
