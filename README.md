@@ -1,4 +1,4 @@
-# eslint-plugin-deny-word
+# eslint-plugin-deny-words
 
 Prevent unwanted words in code
 
@@ -10,19 +10,19 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-deny-word`:
+Next, install `eslint-plugin-deny-words`:
 
 ```
-$ npm install eslint-plugin-deny-word --save-dev
+$ npm install eslint-plugin-deny-words --save-dev
 ```
 
 ## Usage
 
-Add `deny-word` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `deny-words` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
-  "plugins": ["deny-word"]
+  "plugins": ["deny-words"]
 }
 ```
 
@@ -31,7 +31,7 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
   "rules": {
-    "deny-word/deny-word": "error"
+    "deny-words/deny-words": "error"
   }
 }
 ```
