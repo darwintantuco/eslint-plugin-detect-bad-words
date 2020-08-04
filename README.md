@@ -40,8 +40,11 @@ Then configure the rules you want to use under the rules section.
 
 ```json
 "settings": {
-    "denyWordList": ["fck", "sht", "tite"]
-  }
+  "react": {
+    "version": "16.8"
+  },
+  "denyWordList": ["fck", "sht", "tite"]
+}
 ```
 
 ## License
