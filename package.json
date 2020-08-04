@@ -1,5 +1,5 @@
 {
-  "name": "eslint-plugin-deny-words",
+  "name": "eslint-plugin-deny-unwanted-words",
   "version": "0.0.1",
   "description": "Deny unwanted words in code",
   "keywords": [

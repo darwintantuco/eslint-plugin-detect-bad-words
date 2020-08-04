@@ -1,7 +1,7 @@
 'use strict'
 
 const RuleTester = require('eslint').RuleTester
-const rule = require('../../../lib/rules/deny-words')
+const rule = require('../../../lib/rules/deny-unwanted-words')
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -20,7 +20,7 @@ const defaultErrors = (word) => [
   { message: `Word \`${word}\` is not allowed.` },
 ]
 
-ruleTester.run('deny-words', rule, {
+ruleTester.run('deny-unwanted-words', rule, {
   valid: [{ code: "'Awesome string'" }, { code: '<h1> Awesome string </h1>' }],
   invalid: [
     {
