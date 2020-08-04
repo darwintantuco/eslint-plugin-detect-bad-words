@@ -6,6 +6,9 @@ const rule = require('../../../lib/rules/deny-words')
 const parserOptions = {
   ecmaVersion: 2018,
   sourceType: 'module',
+  ecmaFeatures: {
+    jsx: true,
+  },
 }
 
 const settings = {
@@ -18,7 +21,7 @@ const defaultErrors = (word) => [
 ]
 
 ruleTester.run('deny-words', rule, {
-  valid: [{ code: "'Awesome string'" }],
+  valid: [{ code: "'Awesome string'" }, { code: '<h1> Awesome string </h1>' }],
   invalid: [
     {
       code: "'tite'",
