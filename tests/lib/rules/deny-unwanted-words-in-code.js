@@ -1,7 +1,7 @@
 'use strict'
 
 const RuleTester = require('eslint').RuleTester
-const rule = require('../../../lib/rules/deny-unwanted-words')
+const rule = require('../../../lib/rules/detect-unwanted-words-in-code')
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -12,7 +12,7 @@ const parserOptions = {
 }
 
 const settings = {
-  denyWordList: ['tite', 'fck'],
+  unwantedWords: ['tite', 'fck'],
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
@@ -20,8 +20,19 @@ const defaultErrors = (word) => [
   { message: `Word \`${word}\` is not allowed.` },
 ]
 
-ruleTester.run('deny-unwanted-words', rule, {
-  valid: [{ code: "'Awesome string'" }, { code: '<h1> Awesome string </h1>' }],
+ruleTester.run('detect-unwanted-words-in-code', rule, {
+  valid: [
+    { code: "'Awesome string'" },
+    { code: '<h1> Awesome string </h1>' },
+    {
+      code: `
+        <AwesomeComponent
+          statusCode={202}
+          title="My title"
+        />
+      `,
+    },
+  ],
   invalid: [
     {
       code: "'tite'",
