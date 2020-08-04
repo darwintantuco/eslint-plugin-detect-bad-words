@@ -1,6 +1,6 @@
 # eslint-plugin-deny-words
 
-Prevent unwanted words in code
+Deny unwanted words in code
 
 ## Installation
 
@@ -36,7 +36,7 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-### Define deny words list
+### Define deny word list
 
 ```json
 "settings": {

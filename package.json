@@ -1,7 +1,7 @@
 {
   "name": "eslint-plugin-deny-words",
   "version": "0.0.1",
-  "description": "Prevent unwanted words in code",
+  "description": "Deny unwanted words in code",
   "keywords": [
     "eslint",
     "eslintplugin",
