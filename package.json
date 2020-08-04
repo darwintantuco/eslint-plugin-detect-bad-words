@@ -34,5 +34,10 @@
   "engines": {
     "node": ">=0.10.0"
   },
-  "license": "ISC"
+  "license": "MIT",
+  "homepage": "https://github.com/darwintantuco/eslint-plugin-deny-unwanted-words",
+  "bugs": {
+    "url": "https://github.com/darwintantuco/eslint-plugin-deny-unwanted-words"
+  },
+  "repository": "git@github.com:darwintantuco/eslint-plugin-deny-unwanted-words.git"
 }
