@@ -42,6 +42,10 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
       errors: defaultErrors('tite'),
     },
     {
+      code: '// what the fck?',
+      errors: defaultErrors('fck'),
+    },
+    {
       code: '/* tite */',
       errors: defaultErrors('tite'),
     },

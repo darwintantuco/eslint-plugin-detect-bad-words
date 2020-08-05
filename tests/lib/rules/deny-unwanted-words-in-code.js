@@ -40,6 +40,10 @@ ruleTester.run('detect-unwanted-words-in-code', rule, {
       errors: defaultErrors('fck'),
     },
     {
+      code: "'fck?'",
+      errors: defaultErrors('fck'),
+    },
+    {
       code: "'me fck'",
       errors: defaultErrors('fck'),
     },
