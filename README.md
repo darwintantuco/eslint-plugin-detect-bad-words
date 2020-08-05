@@ -1,5 +1,7 @@
 # eslint-plugin-detect-unwanted-words
 
+![Node.js CI](https://github.com/darwintantuco/eslint-plugin-detect-unwanted-words/workflows/Node.js%20CI/badge.svg?branch=master)
+
 Detect unwanted words in code and comments
 
 ![](demo.png)
