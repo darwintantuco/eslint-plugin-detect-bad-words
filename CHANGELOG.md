@@ -2,6 +2,10 @@
 
 All changes on this project will be documented in this file.
 
+## [1.0.4] - August 5, 2020
+
+- Optimize search logic
+
 ## [1.0.3] - August 5, 2020
 
 - Fix bug when `unwantedWords` contains an item with multiple words
