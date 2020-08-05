@@ -23,7 +23,9 @@ const defaultErrors = (word) => [
 ruleTester.run('detect-unwanted-words-in-comment', rule, {
   valid: [
     { code: '// title' },
+    { code: '// TITLE' },
     { code: '/* title */' },
+    { code: '// subtite' },
     { code: '{/* title */}' },
     {
       code: `{/*
@@ -39,16 +41,12 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
       errors: defaultErrors('tite'),
     },
     {
-      code: '// subtite',
-      errors: defaultErrors('subtite'),
-    },
-    {
       code: '/* tite */',
       errors: defaultErrors('tite'),
     },
     {
       code: '/* me fck */',
-      errors: defaultErrors(`me fck`),
+      errors: defaultErrors('fck'),
     },
     {
       code: '{/* tite */}',
@@ -56,9 +54,14 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
     },
     {
       code: `{/*
+        hey
         tite
       */}`,
       errors: defaultErrors('tite'),
+    },
+    {
+      code: '// TITE',
+      errors: defaultErrors('TITE'),
     },
   ],
 })

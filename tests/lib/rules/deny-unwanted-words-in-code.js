@@ -24,6 +24,7 @@ ruleTester.run('detect-unwanted-words-in-code', rule, {
   valid: [
     { code: "'Awesome string'" },
     { code: '<h1> Awesome string </h1>' },
+    { code: "let b = 'subtite'" },
     {
       code: `
         <AwesomeComponent
@@ -35,20 +36,16 @@ ruleTester.run('detect-unwanted-words-in-code', rule, {
   ],
   invalid: [
     {
-      code: "'tite'",
-      errors: defaultErrors('tite'),
-    },
-    {
-      code: "'subtite'",
-      errors: defaultErrors('subtite'),
+      code: "'fck'",
+      errors: defaultErrors('fck'),
     },
     {
       code: "'me fck'",
-      errors: defaultErrors('me fck'),
+      errors: defaultErrors('fck'),
     },
     {
-      code: "'fck'",
-      errors: defaultErrors('fck'),
+      code: "const a = 'tite'",
+      errors: defaultErrors('tite'),
     },
     {
       code: '<div> tite </div>',
@@ -57,10 +54,15 @@ ruleTester.run('detect-unwanted-words-in-code', rule, {
     {
       code: `
         <div>
+          hey
           tite
         </div>
       `,
       errors: defaultErrors('tite'),
+    },
+    {
+      code: "'me FCK'",
+      errors: defaultErrors('FCK'),
     },
   ],
 })
