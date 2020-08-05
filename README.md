@@ -44,7 +44,7 @@ Then configure the rules you want to use under the rules section.
   "react": {
     "version": "16.8"
   },
-  "unwantedWords": ["fck", "sht", "tite", "trust me..."]
+  "unwantedWords": ["fck", "sht", "tite", "trust me"]
 }
 ```
 

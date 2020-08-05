@@ -12,7 +12,7 @@ const parserOptions = {
 }
 
 const settings = {
-  unwantedWords: ['tite', 'fck'],
+  unwantedWords: ['tite', 'fck', 'trust me'],
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
@@ -34,6 +34,7 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
         comment
       */}`,
     },
+    { code: '// me trust' },
   ],
   invalid: [
     {
@@ -62,6 +63,17 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
     {
       code: '// TITE',
       errors: defaultErrors('TITE'),
+    },
+    {
+      code: '// trust me...',
+      errors: defaultErrors('trust me'),
+    },
+    {
+      code: `{/*
+        hey
+        trust me...
+      */}`,
+      errors: defaultErrors('trust me'),
     },
   ],
 })
