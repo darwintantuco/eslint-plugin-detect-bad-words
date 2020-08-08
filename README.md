@@ -10,14 +10,18 @@ Detect unwanted words in code and comments
 
 You'll first need to install [ESLint](http://eslint.org):
 
-```
-$ npm i eslint --save-dev
-```
-
 Next, install `eslint-plugin-detect-unwanted-words`:
+
+### npm
 
 ```
 $ npm install eslint-plugin-detect-unwanted-words --save-dev
+```
+
+### yarn
+
+```
+$ yarn add eslint-plugin-detect-unwanted-words --dev
 ```
 
 ## Usage
@@ -30,6 +34,16 @@ Add `detect-unwanted-words` to the plugins section of your `.eslintrc` configura
 }
 ```
 
+Define unwanted words under settings section.
+
+```json
+{
+  "settings": {
+    "unwantedWords": ["fck", "sht", "tite", "trust me"]
+  }
+}
+```
+
 Then configure the rules you want to use under the rules section.
 
 ```json
@@ -38,17 +52,6 @@ Then configure the rules you want to use under the rules section.
     "detect-unwanted-words/detect-unwanted-words-in-code": "error",
     "detect-unwanted-words/detect-unwanted-words-in-comments": "error"
   }
-}
-```
-
-### Define unwanted words
-
-```json
-"settings": {
-  "react": {
-    "version": "16.8"
-  },
-  "unwantedWords": ["fck", "sht", "tite", "trust me"]
 }
 ```
 
