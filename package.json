@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-detect-unwanted-words",
-  "version": "1.0.4",
-  "description": "Detect unwanted words in code and comments",
+  "name": "eslint-plugin-detect-bad-words",
+  "version": "1.0.0",
+  "description": "Detect bad words in code and comments",
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -17,6 +17,7 @@
     "ci": "run-p test prettier:check"
   },
   "dependencies": {
+    "badwords": "^1.0.0",
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
@@ -35,9 +36,9 @@
     "node": ">=0.10.0"
   },
   "license": "MIT",
-  "homepage": "https://github.com/darwintantuco/eslint-plugin-detect-unwanted-words",
+  "homepage": "https://github.com/darwintantuco/eslint-plugin-detect-bad-words",
   "bugs": {
-    "url": "https://github.com/darwintantuco/eslint-plugin-detect-unwanted-words"
+    "url": "https://github.com/darwintantuco/eslint-plugin-detect-bad-words"
   },
-  "repository": "git@github.com:darwintantuco/eslint-plugin-detect-unwanted-words.git"
+  "repository": "git@github.com:darwintantuco/eslint-plugin-detect-bad-words.git"
 }

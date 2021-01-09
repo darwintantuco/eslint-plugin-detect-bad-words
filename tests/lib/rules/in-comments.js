@@ -1,7 +1,7 @@
 'use strict'
 
 const RuleTester = require('eslint').RuleTester
-const rule = require('../../../lib/rules/detect-unwanted-words-in-comments')
+const rule = require('../../../lib/rules/in-comment')
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -12,7 +12,7 @@ const parserOptions = {
 }
 
 const settings = {
-  unwantedWords: ['tite', 'fck', 'trust me', 'f*ck'],
+  customBadWords: ['wtf', 'tite', 'fck', 'f*ck'],
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
@@ -20,7 +20,7 @@ const defaultErrors = (word) => [
   { message: `Word \`${word}\` is not allowed.` },
 ]
 
-ruleTester.run('detect-unwanted-words-in-comment', rule, {
+ruleTester.run('detect-bad-words-in-comment', rule, {
   valid: [
     { code: '// title' },
     { code: '// TITLE' },
@@ -34,9 +34,30 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
         comment
       */}`,
     },
-    { code: '// me trust' },
   ],
   invalid: [
+    // words from badwords package
+    {
+      code: '// bitch',
+      errors: defaultErrors('bitch'),
+    },
+    {
+      code: '// BITCH',
+      errors: defaultErrors('BITCH'),
+    },
+    {
+      code: '// Tittie5',
+      errors: defaultErrors('Tittie5'),
+    },
+    {
+      code: '// hey BITCH',
+      errors: defaultErrors('BITCH'),
+    },
+    // custom bad words
+    {
+      code: '// tite',
+      errors: defaultErrors('tite'),
+    },
     {
       code: '// tite',
       errors: defaultErrors('tite'),
@@ -73,15 +94,15 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
       errors: defaultErrors('TITE'),
     },
     {
-      code: '// trust me...',
-      errors: defaultErrors('trust me'),
+      code: '// wtf...',
+      errors: defaultErrors('wtf'),
     },
     {
       code: `{/*
         hey
-        trust me...
+        wtf...
       */}`,
-      errors: defaultErrors('trust me'),
+      errors: defaultErrors('wtf'),
     },
   ],
 })
