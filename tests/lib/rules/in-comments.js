@@ -1,7 +1,7 @@
 'use strict'
 
 const RuleTester = require('eslint').RuleTester
-const rule = require('../../../lib/rules/detect-unwanted-words-in-comments')
+const rule = require('../../../lib/rules/in-comments')
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -12,7 +12,7 @@ const parserOptions = {
 }
 
 const settings = {
-  unwantedWords: ['tite', 'fck', 'trust me', 'f*ck'],
+  customBadWords: ['tite', 'fck', 'trust me', 'f*ck'],
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
@@ -20,7 +20,7 @@ const defaultErrors = (word) => [
   { message: `Word \`${word}\` is not allowed.` },
 ]
 
-ruleTester.run('detect-unwanted-words-in-comment', rule, {
+ruleTester.run('detect-bad-words-in-comment', rule, {
   valid: [
     { code: '// title' },
     { code: '// TITLE' },
