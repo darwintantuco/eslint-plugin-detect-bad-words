@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-detect-bad-words",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "Detect bad words in code and comments",
   "keywords": [
     "eslint",
