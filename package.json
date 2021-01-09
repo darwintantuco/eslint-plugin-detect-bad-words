@@ -17,6 +17,7 @@
     "ci": "run-p test prettier:check"
   },
   "dependencies": {
+    "badwords": "^1.0.0",
     "requireindex": "~1.1.0"
   },
   "devDependencies": {
