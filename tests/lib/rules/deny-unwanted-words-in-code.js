@@ -35,6 +35,20 @@ ruleTester.run('detect-unwanted-words-in-code', rule, {
     },
   ],
   invalid: [
+    // words from badwords package
+    {
+      code: "'bitch'",
+      errors: defaultErrors('bitch'),
+    },
+    {
+      code: "'BITCH'",
+      errors: defaultErrors('BITCH'),
+    },
+    {
+      code: "'Tittie5'",
+      errors: defaultErrors('Tittie5'),
+    },
+    // custom bad words
     {
       code: "'fck'",
       errors: defaultErrors('fck'),

@@ -37,6 +37,20 @@ ruleTester.run('detect-unwanted-words-in-comment', rule, {
     { code: '// me trust' },
   ],
   invalid: [
+    // words from badwords package
+    {
+      code: '// bitch',
+      errors: defaultErrors('bitch'),
+    },
+    {
+      code: '// BITCH',
+      errors: defaultErrors('BITCH'),
+    },
+    {
+      code: '// Tittie5',
+      errors: defaultErrors('Tittie5'),
+    },
+    // custom bad words
     {
       code: '// tite',
       errors: defaultErrors('tite'),
