@@ -50,6 +50,10 @@ ruleTester.run('detect-bad-words-in-comment', rule, {
       code: '// Tittie5',
       errors: defaultErrors('Tittie5'),
     },
+    {
+      code: '// hey BITCH',
+      errors: defaultErrors('BITCH'),
+    },
     // custom bad words
     {
       code: '// tite',
