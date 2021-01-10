@@ -2,6 +2,7 @@
 
 const RuleTester = require('eslint').RuleTester
 const rule = require('../../../lib/rules/in-code')
+const { buildErrorMessage } = require('../../../lib/util')
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -16,9 +17,7 @@ const settings = {
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
-const defaultErrors = (word) => [
-  { message: `Word \`${word}\` is not allowed.` },
-]
+const defaultErrors = (word) => [{ message: buildErrorMessage(word) }]
 
 ruleTester.run('detect-bad-words-in-code', rule, {
   valid: [
@@ -33,6 +32,9 @@ ruleTester.run('detect-bad-words-in-code', rule, {
         />
       `,
     },
+    { code: "const temp = ''" },
+    { code: 'class Temp {}' },
+    { code: '{temp: 1}' },
   ],
   invalid: [
     // words from badwords package
@@ -51,6 +53,38 @@ ruleTester.run('detect-bad-words-in-code', rule, {
     {
       code: "'hey BITCH'",
       errors: defaultErrors('BITCH'),
+    },
+    // identifiers
+    {
+      code: "const bitch = ''",
+      errors: defaultErrors('bitch'),
+    },
+    {
+      code: 'class Bitch {}',
+      errors: defaultErrors('Bitch'),
+    },
+    {
+      code: '{ bitch: 1 }',
+      errors: defaultErrors('bitch'),
+    },
+    {
+      code: `
+        var bitch = {
+          ass: 1
+        };
+      `,
+      errors: [
+        { message: buildErrorMessage('bitch') },
+        { message: buildErrorMessage('ass') },
+      ],
+    },
+    {
+      code: `
+        {
+          bitch: 1
+        }
+      `,
+      errors: defaultErrors('bitch'),
     },
     // custom bad words
     {

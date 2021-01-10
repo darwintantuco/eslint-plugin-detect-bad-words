@@ -8,6 +8,7 @@ All changes on this project will be documented in this file.
 - Publish `eslint-plugin-detect-bad-words`
 - Deprecate `eslint-plugin-detect-unwanted-words`
 - Use [badwords](https://github.com/MauriceButler/badwords) under the hood
+- Detect words from identifiers
 
 ---
 
