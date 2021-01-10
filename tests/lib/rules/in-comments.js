@@ -2,6 +2,7 @@
 
 const RuleTester = require('eslint').RuleTester
 const rule = require('../../../lib/rules/in-comment')
+const { buildErrorMessage } = require('../../../lib/util')
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -16,9 +17,7 @@ const settings = {
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
-const defaultErrors = (word) => [
-  { message: `Word \`${word}\` is not allowed.` },
-]
+const defaultErrors = (word) => [{ message: buildErrorMessage(word) }]
 
 ruleTester.run('detect-bad-words-in-comment', rule, {
   valid: [
