@@ -10,6 +10,7 @@ All changes on this project will be documented in this file.
 - Use [badwords](https://github.com/MauriceButler/badwords) under the hood
 - Detect bad words on identifiers
 - Configure eslint
+- Configure typescript
 
 ---
 

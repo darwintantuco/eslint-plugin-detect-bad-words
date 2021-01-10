@@ -1,8 +1,10 @@
 'use strict'
 
-const RuleTester = require('eslint').RuleTester
-const rule = require('../../../lib/rules/in-code')
-const { buildErrorMessage } = require('../../../lib/util')
+export {}
+
+import { RuleTester } from 'eslint'
+import rule from '../../lib/rules/in-code'
+import { buildErrorMessage } from '../../lib/util'
 
 const parserOptions = {
   ecmaVersion: 2018,
@@ -17,7 +19,7 @@ const settings = {
 }
 
 const ruleTester = new RuleTester({ parserOptions, settings })
-const defaultErrors = (word) => [{ message: buildErrorMessage(word) }]
+const defaultErrors = (word: string) => [{ message: buildErrorMessage(word) }]
 
 ruleTester.run('detect-bad-words-in-code', rule, {
   valid: [
