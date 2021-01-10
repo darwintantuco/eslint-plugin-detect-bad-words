@@ -4,11 +4,13 @@ All changes on this project will be documented in this file.
 
 ## [1.0.0] - January 10, 2021
 
-- Package rename from `eslint-plugin-detect-unwanted-words` to `eslint-plugin-detect-bad-words`
+- Rename package from `eslint-plugin-detect-unwanted-words` to `eslint-plugin-detect-bad-words`
 - Publish `eslint-plugin-detect-bad-words`
 - Deprecate `eslint-plugin-detect-unwanted-words`
 - Use [badwords](https://github.com/MauriceButler/badwords) under the hood
-- Detect words from identifiers
+- Detect bad words on identifiers
+- Configure eslint
+- Configure typescript
 
 ---
 
