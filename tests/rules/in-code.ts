@@ -2,8 +2,10 @@
 
 export {}
 
+// eslint-disable-next-line
+const rule = require('../../lib/rules/in-code')
+
 import { RuleTester } from 'eslint'
-import rule from '../../lib/rules/in-code'
 import { buildErrorMessage } from '../../lib/util'
 
 const parserOptions = {
