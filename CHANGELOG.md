@@ -2,8 +2,9 @@
 
 All changes on this project will be documented in this file.
 
-## [1.0.0] - January 10, 2021
+## [1.0.5] - January 10, 2021
 
+- Initial release
 - Rename package from `eslint-plugin-detect-unwanted-words` to `eslint-plugin-detect-bad-words`
 - Publish `eslint-plugin-detect-bad-words`
 - Deprecate `eslint-plugin-detect-unwanted-words`

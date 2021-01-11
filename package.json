@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-detect-bad-words",
-  "version": "1.0.0",
+  "version": "1.0.5",
   "description": "Detect bad/profanity words in code",
   "main": "dist/index.js",
   "keywords": [
