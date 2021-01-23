@@ -2,6 +2,11 @@
 
 All changes on this project will be documented in this file.
 
+## [1.0.7] - January 23, 2021
+
+- More strict typescript config
+- Remove unused eslint plugins
+
 ## [1.0.6] - January 11, 2021
 
 - Fix compilation issue
