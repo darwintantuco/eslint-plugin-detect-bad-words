@@ -1,12 +1,16 @@
 {
   "name": "eslint-plugin-detect-bad-words",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Detect bad/profanity words in code",
   "main": "dist/index.js",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "profane",
+    "profanity",
+    "swear",
+    "curse"
   ],
   "author": "Darwin Tantuco",
   "prettier": "@darwintantuco/prettier-config",
@@ -40,7 +44,6 @@
     "eslint": "^7.17.0",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.22.0",
     "husky": "^4.2.5",
     "mocha": "^7.2.0",
     "npm-run-all": "^4.1.5",
