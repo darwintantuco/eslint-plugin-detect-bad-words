@@ -1,9 +1,11 @@
 'use strict'
 
+import { Rule } from 'eslint'
+import * as ESTree from 'estree'
 import { searchForBadWords, isEmpty, buildErrorMessage } from '../util'
 
 module.exports = {
-  create: (context) => {
+  create: (context: Rule.RuleContext): Rule.RuleListener => {
     const settings = context.settings || {}
     const customBadWords = settings.customBadWords || []
 
@@ -23,7 +25,7 @@ module.exports = {
         }
       },
 
-      JSXText(node) {
+      JSXText(node: ESTree.Literal) {
         if (typeof node.value !== 'string') return
 
         const result = searchForBadWords(customBadWords, node.value)
